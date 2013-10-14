@@ -17,6 +17,13 @@ public class MultipleLocalAssignments {
         } else if (product.contains("ipad")) {
             type = "tablet";
             brand = "apple";
+        } else if (product.contains("nexus")) {
+            brand = "google";
+            if (product.contains("4")) {
+                type = "mobile";
+            } else {
+                type = "tablet";
+            }
         }
         if (brand.equals("samsung")) {
             if (product.contains("tab")) {
