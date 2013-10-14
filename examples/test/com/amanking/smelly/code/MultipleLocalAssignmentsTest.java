@@ -41,4 +41,15 @@ public class MultipleLocalAssignmentsTest {
         Assert.assertEquals(" :  : canvas 4", code.buildProductString("canvas 4"));
     }
 
+    @Test
+    public void shouldReturnProductStringForNexusPhone() {
+        MultipleLocalAssignments code = new MultipleLocalAssignments();
+        Assert.assertEquals("mobile : google : nexus 4", code.buildProductString("nexus 4"));
+    }
+
+    @Test
+    public void shouldReturnProductStringForNexusTablet() {
+        MultipleLocalAssignments code = new MultipleLocalAssignments();
+        Assert.assertEquals("tablet : google : nexus 7", code.buildProductString("nexus 7"));
+    }
 }

@@ -19,14 +19,19 @@ public class MultipleLocalAssignments {
         if (product.contains("galaxy")) {
             return "samsung";
         }
+        if (product.contains("nexus")) {
+            return "google";
+        }
         return "";
     }
 
     private String type(String product) {
-        if (product.contains("lumia") || product.contains("iphone") || (product.contains("galaxy") && !product.contains("tab"))) {
+        if (product.contains("lumia") || product.contains("iphone") || (product.contains("galaxy") && !product.contains("tab")) ||
+                product.contains("nexus 4")) {
             return "mobile";
         }
-        if (product.contains("ipad") || (product.contains("galaxy") && product.contains("tab"))) {
+        if (product.contains("ipad") || (product.contains("galaxy") && product.contains("tab")) ||
+                product.contains("nexus 7")) {
             return "tablet";
         }
         return "";
