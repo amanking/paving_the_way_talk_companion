@@ -9,8 +9,7 @@ public class LongMethod {
         // ...
         // LOTS of code...
 
-        if ((productName.endsWith("Tab 11") && productName.startsWith("Galaxy"))
-                || productName.contains("PRE-ORDER") || forcePreOrder) {
+        if (isPreOrder(productName)) {
             availability += "Pre-Order Only";
         }
 
@@ -18,6 +17,11 @@ public class LongMethod {
         // ...
 
         return availability;
+    }
+
+    boolean isPreOrder(String productName) {
+        boolean isGalaxyTab11 = productName.endsWith("Tab 11") && productName.startsWith("Galaxy");
+        return isGalaxyTab11 || productName.contains("PRE-ORDER") || forcePreOrder;
     }
 
     public void setForcePreOrder(boolean forcePreOrder) {
