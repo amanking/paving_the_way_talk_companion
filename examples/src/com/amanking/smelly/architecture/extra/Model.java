@@ -6,4 +6,8 @@ public class Model {
     public void addAttribute(String key, Object value) {
 
     }
+
+    public Object getAttribute(String product) {
+        return null;
+    }
 }
