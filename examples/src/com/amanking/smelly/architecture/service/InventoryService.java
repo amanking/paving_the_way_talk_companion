@@ -10,17 +10,6 @@ import com.amanking.smelly.architecture.extra.Service;
 public class InventoryService {
     @Autowired private InventoryDao inventoryDao;
 
-    public boolean isAvailable(String productId) {
-        try {
-            Inventory inventory = findInventory(productId);
-            return inventory.getInventoryCount() > 0 ||
-                    inventory.getType().equals(InventoryType.INFINITE);
-        } catch (Exception e) {
-            e.printStackTrace();
-            return false;
-        }
-    }
-
     public Inventory findInventory(String productId) {
         return inventoryDao.findInventory(productId);
     }

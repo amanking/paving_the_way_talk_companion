@@ -16,8 +16,8 @@ public class InventoryController {
         Product product = productService.findProduct(productId);
         model.addAttribute("product", product);
 
-        if (inventoryService.isAvailable(productId)) {
-            Inventory inventory = inventoryService.findInventory(productId);
+        Inventory inventory = inventoryService.findInventory(productId);
+        if (inventory.isAvailable()) {
             model.addAttribute("inventoryCount", inventory.getInventoryCount());
         }
         return "displayProduct";
