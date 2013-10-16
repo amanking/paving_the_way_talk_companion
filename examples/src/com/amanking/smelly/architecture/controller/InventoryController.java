@@ -8,8 +8,14 @@ import com.amanking.smelly.architecture.service.ProductService;
 
 @Controller
 public class InventoryController {
-    @Autowired private ProductService productService;
-    @Autowired private InventoryService inventoryService;
+    private ProductService productService;
+    private InventoryService inventoryService;
+
+    @Autowired
+    public InventoryController(ProductService productService, InventoryService inventoryService) {
+        this.productService = productService;
+        this.inventoryService = inventoryService;
+    }
 
     @RequestMapping(value="/products/{productId}", method= RequestMethod.GET)
     public String findProduct(@PathVariable String productId, Model model) {

@@ -2,6 +2,7 @@ package com.amanking.smelly.architecture.controller;
 
 import com.amanking.smelly.architecture.domain.Product;
 import com.amanking.smelly.architecture.extra.Model;
+import com.amanking.smelly.architecture.service.InventoryService;
 import com.amanking.smelly.architecture.service.ProductService;
 import junit.framework.Assert;
 import org.junit.Test;
@@ -18,7 +19,7 @@ public class InventoryControllerTest {
         ProductService mockProductService = mock(ProductService.class);
         when(mockProductService.findProduct("123456")).thenReturn(product);
 
-        InventoryController controller = new InventoryController();
+        InventoryController controller = new InventoryController(mockProductService, mock(InventoryService.class));
 
         Model model = new Model();
         controller.findProduct("123456", model);
